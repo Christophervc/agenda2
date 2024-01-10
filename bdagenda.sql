@@ -15,6 +15,7 @@ CREATE TABLE agenda
   CONSTRAINT agenda_codigoper_pk PRIMARY KEY (codigoper)
  );
 
+DROP TABLE IF EXISTS distrito;
 CREATE TABLE distrito (
     id_distrito INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(45) NOT NULL);
