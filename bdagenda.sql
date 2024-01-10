@@ -1,8 +1,8 @@
+
 CREATE SCHEMA IF NOT EXISTS BASEDATOS;
 USE BASEDATOS;
 
 DROP TABLE IF EXISTS agenda;
-
 CREATE TABLE agenda
  (codigoper                  VARCHAR(3)  NOT NULL,
   nombre                     VARCHAR(45) NOT NULL,
@@ -15,10 +15,9 @@ CREATE TABLE agenda
   CONSTRAINT agenda_codigoper_pk PRIMARY KEY (codigoper)
  );
 
- CREATE TABLE distrito (
+CREATE TABLE distrito (
     id_distrito INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(45) NOT NULL
-);
+    nombre VARCHAR(45) NOT NULL);
 
 ALTER TABLE agenda
 ADD COLUMN id_distrito INT,
@@ -27,8 +26,7 @@ ADD CONSTRAINT fk_agenda_distrito FOREIGN KEY (id_distrito) REFERENCES distrito(
 -- Insertar datos en la tabla distrito
 INSERT INTO distrito (nombre) VALUES ('Chimbote'),
 ('Lima');
-
-
+COMMIT;
 
 INSERT INTO agenda VALUES ('1', 'carlos', 'serna','av. palmeras 145',
 '043524875', '942587568','carlos@hotmail.com', 'carlos serna');
